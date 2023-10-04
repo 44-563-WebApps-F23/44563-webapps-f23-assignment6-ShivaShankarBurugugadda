@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Tips</title>
+ </head>
+<body>
+<h1>Shiva Shankar Burugugadda shows tip amounts</h1>
+<h2>Getting input</h2>
+
+<div class="container">
+    <form>
+        <label for="tip"> Enter base amount</label>
+        <input type="number" id="tip" name="tip" value="50">
+        <br>
+        <label for="second">Enter the tip percent</label>
+        <input type="number" id="second" name="second" value="15">
+        <br>
+        <input type="button" class="btn btn-success" onclick="tips();" value="Show tip">
+    </form>
+    <p id="result"> The tip amount will be shown here</p><br>
+</div>
+<br>
+
+<script>
+    function tips(){
+        let tip1 = parseFloat(document.getElementById("tip").value);
+        let second1 = parseFloat(document.getElementById("second").value);
+        let myOutput="";
+        for (let i = 0; i < 5; i++) {
+            let tipPercentage = second1 + i * 4;
+            let tipAmount = (tip1 * tipPercentage) / 100;
+            myOutput += tipPercentage + "% is " + tipAmount + "; ";
+        }
+
+        document.getElementById("result").innerHTML="Tip are: "+ myOutput
+    }
+    </script>
+    </body>
+    </html>
