@@ -20,7 +20,23 @@
     <p id="result"> The tip amount will be shown here</p><br>
 </div>
 <br>
-
+<div class="container">
+    <form>
+        <div class="container">
+        <label for="sum">sum</label>
+        <input type="radio" id="sum" name="sum" onclick="chooseOp()">
+        </div><br>
+        <div class="container">
+        <label for="diff">difference</label>
+        <input type="radio" id="diff" name="diff" onclick="chooseOp()">
+        </div><br>
+        <div class="container">
+        <label for="mult">product</label>
+        <input type="radio" id="mult" name="mult" onclick="chooseOp()">
+        </div><br>
+    </form>
+    <p id="result1"> The sum, difference, product values are displayed here </p><br>
+</div>
 <script>
     function tips(){
         let tip1 = parseFloat(document.getElementById("tip").value);
@@ -33,6 +49,28 @@
         }
 
         document.getElementById("result").innerHTML="Tip are: "+ myOutput
+    }
+        function chooseOp(){
+        let base = parseFloat(document.getElementById("tip").value)
+        let tip1 = parseFloat(document.getElementById("second").value)
+        sum=document.getElementById("sum").checked
+        diff=document.getElementById("diff").checked
+        mult=document.getElementById("mult").checked
+        if(sum)
+        {
+            let sum= parseFloat(base) + parseFloat(tip1)
+            document.getElementById("result1").innerHTML="Sum of " + base+" and "+tip1+" is "+ sum
+        }
+        else if(diff)
+        {
+            let diff=parseFloat(base)-parseFloat(tip1)
+            document.getElementById("result1").innerHTML="difference of "+base+" and "+tip1+" is "+ diff
+        }
+        else if(mult)
+        {
+            mult=parseFloat(base)*parseFloat(tip1)
+            document.getElementById("result1").innerHTML="product of "+base+" and "+tip1+" is "+ mult
+        }
     }
     </script>
     </body>
