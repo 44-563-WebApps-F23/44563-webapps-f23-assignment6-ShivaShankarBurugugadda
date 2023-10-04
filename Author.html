@@ -40,5 +40,27 @@
     
     }
     </script>
+    <div style="padding: 50px 50px">
+        <img src="Rajasthan.jpg" id="cities" height="120px" width="120px" onclick="selectImage()">
+    </div>
+    <script>
+        var useImage=1;
+        function selectImage(){
+            switch(useImage){
+                case 1:
+                useImage=2;
+                document.getElementById("cities").src="Rajasthan.jpg"
+                break;
+                case 2:
+                useImage=3;
+                document.getElementById("cities").src="bengaluru.jpg" 
+                break;
+                case 3:
+                useImage=1;
+                document.getElementById("cities").src="udaipur.jpg"
+                break;
+            }
+        }
+    </script>
 </body>
 </html>
